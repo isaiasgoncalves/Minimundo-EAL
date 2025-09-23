@@ -109,14 +109,9 @@ CREATE TABLE Exame
 (
   Status VARCHAR,
   ExameID INT NOT NULL,
-<<<<<<< Updated upstream
-  DtHrInicio DATE NOT NULL,
-  DtHrFim DATE NOT NULL,
-=======
   DtHrIni TIMESTAMP NOT NULL,
   DtHrFim TIMESTAMP NOT NULL,
   Nota NUMERIC(5, 2),
->>>>>>> Stashed changes
   AlunoID INT NOT NULL,
   FuncID INT NOT NULL,
   PRIMARY KEY (ExameID),
