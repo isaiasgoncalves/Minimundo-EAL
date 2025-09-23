@@ -165,7 +165,7 @@ INSERT INTO oper_eal.VeiculoAula (AulaID, IDVeiculo, DtHrInicio, DtHrFim) VALUES
 (5010, 1, '2025-09-05 16:00:00', NULL);
 
 
-INSERT INTO oper_eal.Exame (ExameID, Status, Nota, DtHrIni, DtHrFim, AlunoID, FuncID) VALUES
+INSERT INTO oper_eal.Exame (ExameID, Status, Nota, DtHrInicio, DtHrFim, AlunoID, FuncID) VALUES
 (201, 'Aprovado', 85.0, '2025-09-15 10:00:00', '2025-09-15 11:00:00', 101, 7),
 (202, 'Reprovado', 45.5, '2025-09-16 14:00:00', '2025-09-16 15:00:00', 102, 8),
 (203, 'Agendado', NULL, '2025-09-22 09:00:00', '2025-09-22 10:00:00', 103, 7),
