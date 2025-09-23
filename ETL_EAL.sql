@@ -6,6 +6,7 @@ DELETE FROM DimAluno;
 DELETE FROM DimInstrutor;
 DELETE FROM DimVeiculo;
 DELETE FROM DimCalendario;
+DELETE FROM DimEndereco;
 
 -- Dimensão Aluno
 CREATE TABLE IF NOT EXISTS dw_eal.DimAluno (
@@ -15,9 +16,6 @@ CREATE TABLE IF NOT EXISTS dw_eal.DimAluno (
     AlunoEmail VARCHAR,
     AlunoCelular VARCHAR,
     DataNascimento DATE,
-    Bairro VARCHAR,
-    Municipio VARCHAR,
-    Estado VARCHAR(2)
 );
 
 INSERT INTO dw_eal.DimAluno (
@@ -27,9 +25,6 @@ INSERT INTO dw_eal.DimAluno (
     AlunoEmail,
     AlunoCelular,
     DataNascimento,
-    Bairro,
-    Municipio,
-    Estado
 )
 SELECT 
     gen_random_uuid() AS SKAluno,
@@ -38,9 +33,6 @@ SELECT
     a.AlunoEmail,
     a.AlunoCelular,
     a.DataNascimento,
-    a.Bairro,
-    a.Municipio,
-    a.Estado
 FROM oper_eal.Aluno a;
 
 -- Dimensão Instrutor
@@ -131,6 +123,86 @@ WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario dc 
     WHERE dc.CalendarioData = a.AulaData
 );
+
+INSERT INTO dw_eal.DimCalendario (
+    SKCalendario,
+    CalendarioData,
+    CalendarioDia,
+    CalendarioMes,
+    CalendarioAno,
+    CalendarioTrimestre,
+    CalendarioNomeMes,
+    CalendarioNomeDiaSemana,
+    CalendarioDiaAno,
+    CalendarioTipoDia
+)
+SELECT 
+    gen_random_uuid() AS SKCalendario,
+    ap.TransacaoData AS CalendarioData,
+    EXTRACT(DAY FROM ap.TransacaoData) AS CalendarioDia,
+    EXTRACT(MONTH FROM ap.TransacaoData) AS CalendarioMes,
+    EXTRACT(YEAR FROM ap.TransacaoData) AS CalendarioAno,
+    EXTRACT(QUARTER FROM ap.TransacaoData) AS CalendarioTrimestre,
+    TO_CHAR(ap.TransacaoData, 'Month') AS CalendarioNomeMes,
+    TO_CHAR(ap.TransacaoData, 'Day') AS CalendarioNomeDiaSemana,
+    EXTRACT(DOY FROM ap.TransacaoData) AS CalendarioDiaAno,
+    CASE 
+        WHEN EXTRACT(DOW FROM ap.TransacaoData) IN (0, 6) THEN 'Fim de Semana'
+        ELSE 'Dia de Semana'
+    END AS CalendarioTipoDia
+FROM oper_eal.AlunoPaga ap
+WHERE NOT EXISTS (
+    SELECT 1 FROM dw_eal.DimCalendario dc 
+    WHERE dc.CalendarioData = ap.TransacaoData
+);
+
+-- Dimensão Endereço
+CREATE TABLE IF NOT EXISTS dw_eal.DimEndereco (
+    SKEndereco UUID PRIMARY KEY,
+    AlunoID INT,
+    Bairro VARCHAR,
+    Municipio VARCHAR,
+    Estado VARCHAR(2),
+    Logradouro VARCHAR
+);
+
+INSERT INTO dw_eal.DimEndereco (
+    SKEndereco,
+    AlunoID,
+    Bairro,
+    Municipio,
+    Estado,
+    Logradouro
+)
+SELECT 
+    gen_random_uuid() AS SKEndereco,
+    a.AlunoID
+    a.Bairro,
+    a.Municipio,
+    a.Estado,
+    a.Logradouro
+FROM oper_eal.Aluno a;
+
+-- Dimensão Serviço
+CREATE TABLE IF NOT EXISTS dw_eal.DimServico (
+    SKServico UUID PRIMARY KEY,
+    ServicoID INT,
+    ServicoTipo VARCHAR,
+    ServicoValor FLOAT
+);
+
+INSERT INTO dw_eal.DimServico (
+    SKServico,
+    ServicoID,
+    ServicoTipo,
+    ServicoValor
+)
+SELECT
+    gen_random_uuid() AS SKServico,
+    s.ServicoID
+    s.ServicoTipo,
+    s.ServicoValor
+FROM oper_eal.ServicoAutoEsc s;
 
 -- Fato Aula Prática
 CREATE TABLE IF NOT EXISTS dw_eal.FactAulaPratica (
@@ -228,6 +300,36 @@ JOIN dw_eal.DimInstrutor di on ex.FuncID = di.InstrutorID
 JOIN dw_eal.DimVeiculo dv on ep.VeiculoID = dv.VeiculoID
 JOIN dw_eal.DimCalendario dc ON ex.DtHrIni::DATE = dc.CalendarioData;
 
+-- Fato Receita
 
+CREATE TABLE IF NOT EXISTS dw_eal.FactReceita (
+    -- Colocar ID de transação
+    SKAluno UUID,
+    SKEndereco UUID,
+    SKServico UUID,
+    SKCalendario UUID,
+    Quantidade INT,
+    ValorPago FLOAT
+);
 
+INSERT INTO dw_eal.FactReceita(
+    SKAluno UUID,
+    SKEndereco UUID,
+    SKServico UUID,
+    SKCalendario UUID,
+    Quantidade,
+    ValorPago
+)
+SELECT 
+    da.SKAluno,
+    de.SKEndereco,
+    ds.SKServico,
+    dc.SKCalendario,
+    ap.Quantidade,
+    (ap.Quantidade * ds.ServicoValor) ValorPago,
 
+FROM oper_eal.AlunoPaga ap
+JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
+JOIN dw_eal.DimServico ds ON ap.ServicoID = ds.ServicoID
+JOIN dw_eal.DimCalendario dc ON ap.TransacaoData::DATE = dc.CalendarioData
+JOIN dw_eal.DimEndereco de ON ap.AlunoID = de.AlunoID;
