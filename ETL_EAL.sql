@@ -8,7 +8,6 @@ DELETE FROM DimFuncionario;
 DELETE FROM DimInstrutor;
 DELETE FROM DimVeiculo;
 DELETE FROM DimCalendario;
-DELETE FROM DimEndereco;
 DELETE FROM DimSala;
 
 
@@ -19,7 +18,11 @@ CREATE TABLE IF NOT EXISTS dw_eal.DimAluno (
     AlunoNome VARCHAR,
     AlunoEmail VARCHAR,
     AlunoCelular VARCHAR,
-    DataNascimento DATE
+    DataNascimento DATE,
+    Bairro VARCHAR,
+    Municipio VARCHAR,
+    Estado VARCHAR(2),
+    Logradouro VARCHAR
 );
 
 INSERT INTO dw_eal.DimAluno (
@@ -28,7 +31,11 @@ INSERT INTO dw_eal.DimAluno (
     AlunoNome,
     AlunoEmail,
     AlunoCelular,
-    DataNascimento
+    DataNascimento,
+    Bairro,
+    Municipio,
+    Estado,
+    Logradouro
 )
 SELECT 
     gen_random_uuid() AS SKAluno,
@@ -36,7 +43,11 @@ SELECT
     a.AlunoNome,
     a.AlunoEmail,
     a.AlunoCelular,
-    a.DataNascimento
+    a.DataNascimento,
+    a.Bairro,
+    a.Municipio,
+    a.Estado,
+    a.Logradouro
 FROM oper_eal.Aluno a;
 
 -- Dimensão Funcionário (mais abrangente que Instrutor)
@@ -195,34 +206,6 @@ WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario WHERE CalendarioData = '2025-09-30'
 );
 
-
--- Dimensão Endereço
-CREATE TABLE IF NOT EXISTS dw_eal.DimEndereco (
-    SKEndereco UUID PRIMARY KEY,
-    AlunoID INT,
-    Bairro VARCHAR,
-    Municipio VARCHAR,
-    Estado VARCHAR(2),
-    Logradouro VARCHAR
-);
-
-INSERT INTO dw_eal.DimEndereco (
-    SKEndereco,
-    AlunoID,
-    Bairro,
-    Municipio,
-    Estado,
-    Logradouro
-)
-SELECT 
-    gen_random_uuid() AS SKEndereco,
-    a.AlunoID,
-    a.Bairro,
-    a.Municipio,
-    a.Estado,
-    a.Logradouro
-FROM oper_eal.Aluno a;
-
 -- Dimensão Serviço
 CREATE TABLE IF NOT EXISTS dw_eal.DimServico (
     SKServico UUID PRIMARY KEY,
@@ -279,7 +262,6 @@ FROM oper_eal.Tema t;
 -- Fato Aula Prática
 CREATE TABLE IF NOT EXISTS dw_eal.FactAulaPratica (
     SKAluno UUID,
-    SKEndereco UUID,
     SKInstrutor UUID,
     SKVeiculo UUID,
     SKCalendario UUID,
@@ -287,12 +269,11 @@ CREATE TABLE IF NOT EXISTS dw_eal.FactAulaPratica (
     DtHrFim TIMESTAMP,
     StatusAula VARCHAR,
     DuracaoAula FLOAT,
-    PRIMARY KEY (SKAluno, SKEndereco, SKInstrutor, SKVeiculo, SKCalendario)
+    PRIMARY KEY (SKAluno, SKInstrutor, SKVeiculo, SKCalendario)
 );
 
 INSERT INTO dw_eal.FactAulaPratica (
     SKAluno,
-    SKEndereco,
     SKInstrutor,
     SKVeiculo,
     SKCalendario,
@@ -303,7 +284,6 @@ INSERT INTO dw_eal.FactAulaPratica (
 )
 SELECT
     da.SKAluno,
-    de.SKEndereco,
     di.SKInstrutor,
     dv.SKVeiculo,
     dc.SKCalendario,
@@ -323,7 +303,6 @@ FROM oper_eal.VeiculoAula va
 JOIN oper_eal.AulaPratica ap ON va.AulaID = ap.AulaID
 JOIN oper_eal.Aula a ON ap.AulaID = a.AulaID
 JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
-JOIN dw_eal.DimEndereco de ON ap.AlunoID = de.AlunoID
 JOIN dw_eal.DimInstrutor di ON a.FuncID = di.InstrutorID
 JOIN dw_eal.DimVeiculo dv ON va.IDVeiculo = dv.VeiculoID
 JOIN dw_eal.DimCalendario dc ON a.AulaData = dc.CalendarioData;
@@ -422,17 +401,15 @@ WHERE dc.CalendarioData = '2025-09-30';
 -- Fato Receita
 CREATE TABLE IF NOT EXISTS dw_eal.FactReceita (
     SKAluno UUID,
-    SKEndereco UUID,
     SKServico UUID,
     SKCalendario UUID,
     Quantidade INT,
     ValorPago FLOAT,
-    PRIMARY KEY (SKAluno, SKEndereco, SKServico, SKCalendario)
+    PRIMARY KEY (SKAluno, SKServico, SKCalendario)
 );
 
 INSERT INTO dw_eal.FactReceita(
     SKAluno,
-    SKEndereco,
     SKServico,
     SKCalendario,
     Quantidade,
@@ -440,7 +417,6 @@ INSERT INTO dw_eal.FactReceita(
 )
 SELECT 
     da.SKAluno,
-    de.SKEndereco,
     ds.SKServico,
     dc.SKCalendario,
     ap.Quantidade,
@@ -449,7 +425,6 @@ FROM oper_eal.AlunoPaga ap
 JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
 JOIN dw_eal.DimServico ds ON ap.ServicoID = ds.ServicoID
 JOIN dw_eal.DimCalendario dc ON ap.TransacaoData::DATE = dc.CalendarioData
-JOIN dw_eal.DimEndereco de ON ap.AlunoID = de.AlunoID;
 
 
 -- Fato Aula Teórica
