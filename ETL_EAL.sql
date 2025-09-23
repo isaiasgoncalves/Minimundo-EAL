@@ -332,7 +332,6 @@ JOIN dw_eal.DimCalendario dc ON a.AulaData = dc.CalendarioData;
 
 -- Fato Exame Teórico
 CREATE TABLE IF NOT EXISTS dw_eal.FactExameTeorico (
-    SKExameTeorico UUID PRIMARY KEY, 
     SKAluno UUID,
     SKInstrutor UUID,
     SKSala UUID,
@@ -341,12 +340,13 @@ CREATE TABLE IF NOT EXISTS dw_eal.FactExameTeorico (
     DtHrInicio TIMESTAMP,
     DtHrFim TIMESTAMP,
     StatusExame VARCHAR,
-    Nota NUMERIC(5, 2)
+    Nota NUMERIC(5, 2),
+    PRIMARY KEY (SKAluno, SKInstrutor, SKSala, SKCalendario)
 );
 
-INSERT INTO dw_eal.FactExameTeorico (SKExameTeorico, SKAluno, SKInstrutor, SKSala, SKCalendario, ExameID, DtHrInicio, DtHrFim, StatusExame, Nota)
+INSERT INTO dw_eal.FactExameTeorico (SKAluno, SKInstrutor, SKSala, SKCalendario, ExameID, DtHrInicio, DtHrFim, StatusExame, Nota)
 SELECT 
-    gen_random_uuid(), da.SKAluno, di.SKInstrutor, ds.SKSala, dc.SKCalendario, 
+    da.SKAluno, di.SKInstrutor, ds.SKSala, dc.SKCalendario, 
     ex.ExameID, ex.DtHrInicio, ex.DtHrFim,
     CASE 
         WHEN ex.Status = 'Agendado' THEN 'Agendado'
