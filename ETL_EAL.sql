@@ -3,6 +3,7 @@ SET search_path=dw_eal;
 
 TRUNCATE TABLE FactExamePratico CASCADE;
 DELETE FROM DimAluno;
+DELETE FROM DimFuncionario;
 DELETE FROM DimInstrutor;
 DELETE FROM DimVeiculo;
 DELETE FROM DimCalendario;
@@ -34,6 +35,30 @@ SELECT
     a.AlunoCelular,
     a.DataNascimento
 FROM oper_eal.Aluno a;
+
+-- Dimensão Funcionário (mais abrangente que Instrutor)
+CREATE TABLE IF NOT EXISTS dw_eal.DimFuncionario (
+    SKFuncionario UUID PRIMARY KEY,
+    FuncionarioID INT,
+    FuncionarioNome VARCHAR,
+    Cargo VARCHAR,
+    SalarioBase FLOAT
+);
+
+INSERT INTO dw_eal.DimFuncionario (
+    SKFuncionario,
+    FuncionarioID,
+    FuncionarioNome,
+    Cargo,
+    SalarioBase
+)
+SELECT 
+    gen_random_uuid() AS SKFuncionario,
+    f.FuncID AS FuncionarioID,
+    f.FuncNome AS FuncionarioNome,
+    f.Cargo,
+    f.Salario AS SalarioBase
+FROM oper_eal.Funcionario f;
 
 -- Dimensão Instrutor
 CREATE TABLE IF NOT EXISTS dw_eal.DimInstrutor (
@@ -154,6 +179,17 @@ FROM oper_eal.AlunoPaga ap
 WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario dc 
     WHERE dc.CalendarioData = ap.TransacaoData
+);
+
+INSERT INTO dw_eal.DimCalendario (SKCalendario, CalendarioData, CalendarioDia, CalendarioMes, CalendarioAno, CalendarioTrimestre, CalendarioNomeMes, CalendarioNomeDiaSemana, CalendarioDiaAno, CalendarioTipoDia)
+SELECT 
+    gen_random_uuid(),
+    '2025-09-30'::DATE,
+    30, 9, 2025, 3,
+    'September', 'Tuesday', 273,
+    'Dia de Semana'
+WHERE NOT EXISTS (
+    SELECT 1 FROM dw_eal.DimCalendario WHERE CalendarioData = '2025-09-30'
 );
 
 -- Dimensão Endereço
@@ -296,6 +332,29 @@ JOIN dw_eal.DimAluno da on ex.AlunoID = da.AlunoID
 JOIN dw_eal.DimInstrutor di on ex.FuncID = di.InstrutorID
 JOIN dw_eal.DimVeiculo dv on ep.IDVeiculo = dv.VeiculoID
 JOIN dw_eal.DimCalendario dc ON ex.DtHrInicio::DATE = dc.CalendarioData;
+
+-- Fato Despesa
+CREATE TABLE IF NOT EXISTS dw_eal.FactDespesa (
+    SKFuncionario UUID,
+    SKCalendario UUID,
+    ValorDespesa FLOAT,
+    PRIMARY KEY (SKFuncionario, SKCalendario),
+    FOREIGN KEY (SKFuncionario) REFERENCES dw_eal.DimFuncionario(SKFuncionario),
+    FOREIGN KEY (SKCalendario) REFERENCES dw_eal.DimCalendario(SKCalendario)
+);
+
+INSERT INTO dw_eal.FactDespesa (
+    SKFuncionario,
+    SKCalendario,
+    ValorDespesa
+)
+SELECT
+    df.SKFuncionario,
+    dc.SKCalendario,
+    df.SalarioBase AS ValorDespesa
+FROM dw_eal.DimFuncionario df
+CROSS JOIN dw_eal.DimCalendario dc
+WHERE dc.CalendarioData = '2025-09-30';
 
 -- Fato Receita
 CREATE TABLE IF NOT EXISTS dw_eal.FactReceita (
