@@ -1,15 +1,6 @@
+DROP SCHEMA IF EXISTS dw_eal CASCADE;
 CREATE SCHEMA IF NOT EXISTS dw_eal;
 SET search_path=dw_eal;
-
-TRUNCATE TABLE FactExamePratico CASCADE;
-TRUNCATE TABLE FactExameTeorico CASCADE;
-DELETE FROM DimAluno;
-DELETE FROM DimFuncionario;
-DELETE FROM DimInstrutor;
-DELETE FROM DimVeiculo;
-DELETE FROM DimCalendario;
-DELETE FROM DimSala;
-
 
 -- Dimensão Aluno
 CREATE TABLE IF NOT EXISTS dw_eal.DimAluno (
@@ -161,6 +152,38 @@ FROM oper_eal.Aula a
 WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario dc 
     WHERE dc.CalendarioData = a.AulaData
+);
+
+INSERT INTO dw_eal.DimCalendario (
+    SKCalendario,
+    CalendarioData,
+    CalendarioDia,
+    CalendarioMes,
+    CalendarioAno,
+    CalendarioTrimestre,
+    CalendarioNomeMes,
+    CalendarioNomeDiaSemana,
+    CalendarioDiaAno,
+    CalendarioTipoDia
+)
+SELECT 
+    gen_random_uuid() AS SKCalendario,
+    ex.DtHrInicio AS CalendarioData,
+    EXTRACT(DAY FROM ex.DtHrInicio) AS CalendarioDia,
+    EXTRACT(MONTH FROM ex.DtHrInicio) AS CalendarioMes,
+    EXTRACT(YEAR FROM ex.DtHrInicio) AS CalendarioAno,
+    EXTRACT(QUARTER FROM ex.DtHrInicio) AS CalendarioTrimestre,
+    TO_CHAR(ex.DtHrInicio, 'Month') AS CalendarioNomeMes,
+    TO_CHAR(ex.DtHrInicio, 'Day') AS CalendarioNomeDiaSemana,
+    EXTRACT(DOY FROM ex.DtHrInicio) AS CalendarioDiaAno,
+    CASE 
+        WHEN EXTRACT(DOW FROM ex.DtHrInicio) IN (0, 6) THEN 'Fim de Semana'
+        ELSE 'Dia de Semana'
+    END AS CalendarioTipoDia
+FROM oper_eal.Exame ex
+WHERE NOT EXISTS (
+    SELECT 1 FROM dw_eal.DimCalendario dc 
+    WHERE dc.CalendarioData = ex.DtHrInicio
 );
 
 INSERT INTO dw_eal.DimCalendario (
