@@ -192,6 +192,7 @@ WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario WHERE CalendarioData = '2025-09-30'
 );
 
+
 -- Dimensão Endereço
 CREATE TABLE IF NOT EXISTS dw_eal.DimEndereco (
     SKEndereco UUID PRIMARY KEY,
@@ -239,6 +240,38 @@ SELECT
     s.ServicoTipo,
     s.ServicoValor
 FROM oper_eal.ServicoAutoEsc s;
+
+
+-- Dimensão Sala
+CREATE TABLE IF NOT EXISTS dw_eal.DimSala (
+    SKSala UUID PRIMARY KEY,
+    SalaID INT,
+    CapacidadeMax INT
+);
+
+INSERT INTO dw_eal.DimSala (SKSala, SalaID, CapacidadeMax)
+SELECT
+    gen_random_uuid() AS SKSala,
+    s.IDSala AS SalaID,
+    s.CapacidadeMax
+FROM oper_eal.Sala s;
+
+
+-- - Dimensão Tema
+CREATE TABLE IF NOT EXISTS dw_eal.DimTema (
+    SKTema UUID PRIMARY KEY,
+    TemaID INT,
+    TemaNome VARCHAR,
+    CargaHorariaPrevista INT
+);
+
+INSERT INTO dw_eal.DimTema (SKTema, TemaID, TemaNome, CargaHorariaPrevista)
+SELECT
+    gen_random_uuid() AS SKTema,
+    t.TemaID,
+    t.TemaNome,
+    t.QuantidadeAula AS CargaHorariaPrevista
+FROM oper_eal.Tema t;
 
 -- Fato Aula Prática
 CREATE TABLE IF NOT EXISTS dw_eal.FactAulaPratica (
@@ -387,3 +420,31 @@ JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
 JOIN dw_eal.DimServico ds ON ap.ServicoID = ds.ServicoID
 JOIN dw_eal.DimCalendario dc ON ap.TransacaoData::DATE = dc.CalendarioData
 JOIN dw_eal.DimEndereco de ON ap.AlunoID = de.AlunoID;
+
+
+-- Fato Aula Teórica
+CREATE TABLE IF NOT EXISTS dw_eal.FactAulaTeorica (
+    SKAluno UUID,
+    SKInstrutor UUID,
+    SKSala UUID,
+    SKTema UUID,
+    SKCalendario UUID,
+    QtdPresenca INT,
+    QtdAulasMinistradas INT,
+    PRIMARY KEY (SKAluno, SKInstrutor, SKSala, SKTema, SKCalendario)
+);
+
+INSERT INTO dw_eal.FactAulaTeorica (SKAluno, SKInstrutor, SKSala, SKTema, SKCalendario, QtdPresenca, QtdAulasMinistradas)
+SELECT
+    da.SKAluno, di.SKInstrutor, ds.SKSala, dt.SKTema, dc.SKCalendario,
+    ata.PresencaAluno AS QtdPresenca,
+    1 AS QtdAulasMinistradas
+FROM oper_eal.AulaTAluno ata
+JOIN oper_eal.AulaTeorica att ON ata.AulaID = att.AulaID
+JOIN oper_eal.Aula a ON att.AulaID = a.AulaID
+JOIN oper_eal.AulaTSala ats ON a.AulaID = ats.AulaID
+JOIN dw_eal.DimAluno da ON ata.AlunoID = da.AlunoID
+JOIN dw_eal.DimInstrutor di ON a.FuncID = di.InstrutorID
+JOIN dw_eal.DimSala ds ON ats.IDSala = ds.SalaID
+JOIN dw_eal.DimTema dt ON att.TemaID = dt.TemaID
+JOIN dw_eal.DimCalendario dc ON a.AulaData = dc.CalendarioData;
