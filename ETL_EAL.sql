@@ -308,8 +308,6 @@ JOIN dw_eal.DimVeiculo dv ON va.IDVeiculo = dv.VeiculoID
 JOIN dw_eal.DimCalendario dc ON a.AulaData = dc.CalendarioData;
 
 -- Fato Exame Teórico
-
--- Fato Exame Teórico
 CREATE TABLE IF NOT EXISTS dw_eal.FactExameTeorico (
     SKExameTeorico UUID PRIMARY KEY, 
     SKAluno UUID,
@@ -319,20 +317,27 @@ CREATE TABLE IF NOT EXISTS dw_eal.FactExameTeorico (
     ExameID INT,
     DtHrInicio TIMESTAMP,
     DtHrFim TIMESTAMP,
-    StatusExame VARCHAR
+    StatusExame VARCHAR,
+    Nota NUMERIC(5, 2)
 );
 
-INSERT INTO dw_eal.FactExameTeorico (SKExameTeorico, SKAluno, SKInstrutor, SKSala, SKCalendario, ExameID, DtHrInicio, DtHrFim, StatusExame)
+INSERT INTO dw_eal.FactExameTeorico (SKExameTeorico, SKAluno, SKInstrutor, SKSala, SKCalendario, ExameID, DtHrInicio, DtHrFim, StatusExame, Nota)
 SELECT 
     gen_random_uuid(), da.SKAluno, di.SKInstrutor, ds.SKSala, dc.SKCalendario, 
-    ex.ExameID, ex.DtHrInicio, ex.DtHrFim, ex.Status AS StatusExame 
+    ex.ExameID, ex.DtHrInicio, ex.DtHrFim,
+    CASE 
+        WHEN ex.Status = 'Agendado' THEN 'Agendado'
+        WHEN ex.Nota IS NULL THEN ex.Status 
+        WHEN ex.Nota >= 70 THEN 'Aprovado'
+        ELSE 'Reprovado'
+    END AS StatusExame,
+    ex.Nota
 FROM oper_eal.ExameTeorica et
 JOIN oper_eal.Exame ex ON et.ExameID = ex.ExameID
 JOIN dw_eal.DimAluno da ON ex.AlunoID = da.AlunoID
 JOIN dw_eal.DimInstrutor di ON ex.FuncID = di.InstrutorID
 JOIN dw_eal.DimSala ds ON et.IDSala = ds.SalaID
 JOIN dw_eal.DimCalendario dc ON ex.DtHrInicio::DATE = dc.CalendarioData;
-
 
 -- Fato Exame Prático
 CREATE TABLE IF NOT EXISTS dw_eal.FactExamePratico (
