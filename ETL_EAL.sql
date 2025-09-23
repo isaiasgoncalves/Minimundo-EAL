@@ -452,7 +452,7 @@ SELECT
 FROM oper_eal.AlunoPaga ap
 JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
 JOIN dw_eal.DimServico ds ON ap.ServicoID = ds.ServicoID
-JOIN dw_eal.DimCalendario dc ON ap.TransacaoData::DATE = dc.CalendarioData
+JOIN dw_eal.DimCalendario dc ON ap.TransacaoData::DATE = dc.CalendarioData;
 
 
 -- Fato Aula Teórica
