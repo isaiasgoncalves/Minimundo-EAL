@@ -165,11 +165,21 @@ INSERT INTO oper_eal.VeiculoAula (AulaID, IDVeiculo, DtHrInicio, DtHrFim) VALUES
 (5010, 1, '2025-09-05 16:00:00', NULL);
 
 
+<<<<<<< Updated upstream
 INSERT INTO oper_eal.Exame (ExameID, Status, DtHrInicio, DtHrFim, AlunoID, FuncID) VALUES
 (201, 'Aprovado', '2025-09-15 10:00:00', '2025-09-15 11:00:00', 101, 7),
 (202, 'Reprovado', '2025-09-16 14:00:00', '2025-09-16 15:00:00', 102, 8),
 (203, 'Agendado', '2025-09-22 09:00:00', '2025-09-22 10:00:00', 103, 7),
 (204, 'Aprovado', '2025-09-18 19:00:00', '2025-09-18 21:00:00', 104, 2);
+=======
+INSERT INTO EAL.Exame (ExameID, Status, Nota, DtHrIni, DtHrFim, AlunoID, FuncID) VALUES
+(201, 'Aprovado', 85.0, '2025-09-15 10:00:00', '2025-09-15 11:00:00', 101, 7),
+(202, 'Reprovado', 45.5, '2025-09-16 14:00:00', '2025-09-16 15:00:00', 102, 8),
+(203, 'Agendado', NULL, '2025-09-22 09:00:00', '2025-09-22 10:00:00', 103, 7),
+(204, 'Aprovado', 90.0, '2025-09-18 19:00:00', '2025-09-18 21:00:00', 104, 2),
+(205, 'Aprovado', 78.0, '2025-09-19 10:00:00', '2025-09-19 12:00:00', 115, 5),
+(206, 'Reprovado', 60.0, '2025-09-20 10:00:00', '2025-09-20 12:00:00', 120, 6);
+>>>>>>> Stashed changes
 
 
 INSERT INTO oper_eal.ExamePratico (ExameID, IDVeiculo) VALUES
@@ -177,7 +187,16 @@ INSERT INTO oper_eal.ExamePratico (ExameID, IDVeiculo) VALUES
 (202, 2),
 (203, 1);
 
+<<<<<<< Updated upstream
 INSERT INTO oper_eal.Pagamento (PagtoID, PagtoValor, PagtoData, FuncID) VALUES
+=======
+INSERT INTO EAL.ExameTeorica (ExameID, IDSala) VALUES
+(204, 1),
+(205, 1),
+(206, 2);
+
+INSERT INTO EAL.Pagamento (PagtoID, PagtoValor, PagtoData, FuncID) VALUES
+>>>>>>> Stashed changes
 (501, 160.00, '2025-08-30', 9),
 (502, 450.00, '2025-08-31', 3),
 (503, 750.00, '2025-09-01', 9),
