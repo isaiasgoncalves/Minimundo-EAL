@@ -183,7 +183,7 @@ SELECT
 FROM oper_eal.Exame ex
 WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario dc 
-    WHERE dc.CalendarioData = ex.DtHrInicio
+    WHERE dc.CalendarioData = ex.DtHrInicio::DATE
 );
 
 INSERT INTO dw_eal.DimCalendario (
