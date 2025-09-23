@@ -148,7 +148,7 @@ SELECT
         WHEN EXTRACT(DOW FROM a.AulaData) IN (0, 6) THEN 'Fim de Semana'
         ELSE 'Dia de Semana'
     END AS CalendarioTipoDia
-FROM oper_eal.Aula a
+FROM (SELECT DISTINCT AulaData FROM oper_eal.Aula) a
 WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario dc 
     WHERE dc.CalendarioData = a.AulaData
@@ -180,7 +180,7 @@ SELECT
         WHEN EXTRACT(DOW FROM ex.DtHrInicio) IN (0, 6) THEN 'Fim de Semana'
         ELSE 'Dia de Semana'
     END AS CalendarioTipoDia
-FROM oper_eal.Exame ex
+FROM (SELECT DISTINCT DtHrInicio FROM oper_eal.Exame) ex
 WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario dc 
     WHERE dc.CalendarioData = ex.DtHrInicio::DATE
@@ -212,7 +212,7 @@ SELECT
         WHEN EXTRACT(DOW FROM ap.TransacaoData) IN (0, 6) THEN 'Fim de Semana'
         ELSE 'Dia de Semana'
     END AS CalendarioTipoDia
-FROM oper_eal.AlunoPaga ap
+FROM (SELECT DISTINCT TransacaoData FROM oper_eal.AlunoPaga) ap
 WHERE NOT EXISTS (
     SELECT 1 FROM dw_eal.DimCalendario dc 
     WHERE dc.CalendarioData = ap.TransacaoData
@@ -324,7 +324,7 @@ SELECT
     END AS DuracaoAula
 FROM oper_eal.VeiculoAula va
 JOIN oper_eal.AulaPratica ap ON va.AulaID = ap.AulaID
-JOIN oper_eal.Aula a ON ap.AulaID = a.AulaID
+JOIN (select * from oper_eal.Aula where AulaID in (select AulaiD from oper_eal.AulaPratica)) a ON ap.AulaID = a.AulaID
 JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
 JOIN dw_eal.DimInstrutor di ON a.FuncID = di.InstrutorID
 JOIN dw_eal.DimVeiculo dv ON va.IDVeiculo = dv.VeiculoID
