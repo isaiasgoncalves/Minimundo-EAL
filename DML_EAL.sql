@@ -179,7 +179,6 @@ INSERT INTO oper_eal.ExamePratico (ExameID, IDVeiculo) VALUES
 (202, 2),
 (203, 1);
 
-INSERT INTO oper_eal.Pagamento (PagtoID, PagtoValor, PagtoData, FuncID) VALUES
 INSERT INTO oper_eal.ExameTeorica (ExameID, IDSala) VALUES
 (204, 1),
 (205, 1),
