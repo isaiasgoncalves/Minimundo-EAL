@@ -1,23 +1,23 @@
-INSERT INTO EAL.Veiculo (IDVeiculo, Modelo, VeiculoTipo) VALUES
+INSERT INTO oper_eal.Veiculo (IDVeiculo, Modelo, VeiculoTipo) VALUES
 (1, 'Volkswagen Gol 2023', 'B'),
 (2, 'Chevrolet Onix 2024', 'B'),
 (3, 'Honda CG 160', 'A'),
 (4, 'Mercedes-Benz Accelo', 'C'),
 (5, 'Volkswagen 15.190', 'D');
 
-INSERT INTO EAL.Sala (IDSala, CapacidadeMax) VALUES
+INSERT INTO oper_eal.Sala (IDSala, CapacidadeMax) VALUES
 (1, 30),
 (2, 30),
 (3, 30);
 
-INSERT INTO EAL.Tema (TemaID, TemaNome, QuantidadeAula) VALUES
+INSERT INTO oper_eal.Tema (TemaID, TemaNome, QuantidadeAula) VALUES
 (1, 'Legislação de Trânsito', 18),
 (2, 'Direção Defensiva', 16),
 (3, 'Primeiros Socorros', 4),
 (4, 'Meio Ambiente e Cidadania', 4),
 (5, 'Mecânica Básica', 3);
 
-INSERT INTO EAL.ServicoAutoEsc (ServicoID, ServicoTipo, ServicoValor, ServicoDescricao) VALUES
+INSERT INTO oper_eal.ServicoAutoEsc (ServicoID, ServicoTipo, ServicoValor, ServicoDescricao) VALUES
 (1, 'Pacote Inicial Categoria B', 1500.00, 'Pacote completo para primeira habilitação categoria B'),
 (2, 'Pacote Adição Categoria A', 1200.00, 'Adição da categoria A para habilitados'),
 (3, 'Aula Prática Avulsa', 160.00, 'Aula de reposição ou extra para categoria B'),
@@ -26,19 +26,19 @@ INSERT INTO EAL.ServicoAutoEsc (ServicoID, ServicoTipo, ServicoValor, ServicoDes
 (6, 'Pacote Adição Categoria D', 2800.00, 'Adição de categoria D para habilitados em C'),
 (7, 'Curso Direção Defensiva Corporativo', 2500.00, 'Pacote para empresas - 1 turma de até 15 funcionários');
 
-INSERT INTO EAL.Funcionario (FuncID, FuncNome, Cargo, Salario, FuncCPF, FuncEmail, FuncCelular, FuncSenha) VALUES
-(1, 'Carlos Eduardo Mendes', 'Gerente Administrativo', 6000.00, '11122233344', 'carlos.mendes@eal.com', '21988887777', 'hashed_pass'),
-(2, 'Estevão Lima', 'Sócio-Operacional', 4500.00, '22233344455', 'estevao.lima@eal.com', '21988886666', 'hashed_pass'),
-(3, 'Amanda Lima', 'Sócia-Financeira', 4500.00, '33344455566', 'amanda.lima@eal.com', '21988885555', 'hashed_pass'),
-(4, 'Lara Lima', 'Sócia-Marketing', 4500.00, '44455566677', 'lara.lima@eal.com', '21988884444', 'hashed_pass'),
-(5, 'Beatriz Costa', 'Instrutor Teórico', 3200.00, '55566677788', 'beatriz.costa@eal.com', '21977771111', 'hashed_pass'),
-(6, 'Ricardo Souza', 'Instrutor Teórico', 3200.00, '66677788899', 'ricardo.souza@eal.com', '21977772222', 'hashed_pass'),
-(7, 'Marcos Oliveira', 'Instrutor Prático', 3800.00, '77788899900', 'marcos.oliveira@eal.com', '21966661111', 'hashed_pass'),
-(8, 'Juliana Santos', 'Instrutor Prático', 3800.00, '88899900011', 'juliana.santos@eal.com', '21966662222', 'hashed_pass'),
-(9, 'Felipe Almeida', 'Atendente', 2100.00, '99900011122', 'felipe.almeida@eal.com', '21955551111', 'hashed_pass'),
-(10, 'Vanessa Dias', 'Profissional de TI', 5000.00, '12312312312', 'vanessa.dias@eal.com', '21944441111', 'hashed_pass');
+INSERT INTO oper_eal.Funcionario (FuncID, FuncNome, Cargo, Salario, FuncCPF, FuncEmail, FuncCelular, FuncSenha) VALUES
+(1, 'Carlos Eduardo Mendes', 'Gerente Administrativo', 6000.00, '11122233344', 'carlos.mendes@oper_eal.com', '21988887777', 'hashed_pass'),
+(2, 'Estevão Lima', 'Sócio-Operacional', 4500.00, '22233344455', 'estevao.lima@oper_eal.com', '21988886666', 'hashed_pass'),
+(3, 'Amanda Lima', 'Sócia-Financeira', 4500.00, '33344455566', 'amanda.lima@oper_eal.com', '21988885555', 'hashed_pass'),
+(4, 'Lara Lima', 'Sócia-Marketing', 4500.00, '44455566677', 'lara.lima@oper_eal.com', '21988884444', 'hashed_pass'),
+(5, 'Beatriz Costa', 'Instrutor Teórico', 3200.00, '55566677788', 'beatriz.costa@oper_eal.com', '21977771111', 'hashed_pass'),
+(6, 'Ricardo Souza', 'Instrutor Teórico', 3200.00, '66677788899', 'ricardo.souza@oper_eal.com', '21977772222', 'hashed_pass'),
+(7, 'Marcos Oliveira', 'Instrutor Prático', 3800.00, '77788899900', 'marcos.oliveira@oper_eal.com', '21966661111', 'hashed_pass'),
+(8, 'Juliana Santos', 'Instrutor Prático', 3800.00, '88899900011', 'juliana.santos@oper_eal.com', '21966662222', 'hashed_pass'),
+(9, 'Felipe Almeida', 'Atendente', 2100.00, '99900011122', 'felipe.almeida@oper_eal.com', '21955551111', 'hashed_pass'),
+(10, 'Vanessa Dias', 'Profissional de TI', 5000.00, '12312312312', 'vanessa.dias@oper_eal.com', '21944441111', 'hashed_pass');
 
-INSERT INTO EAL.Aluno (AlunoID, AlunoCPF, AlunoNome, AlunoEmail, AlunoCelular, DataNascimento, Logradouro, Bairro, Municipio, Estado, AlunoSenha) VALUES
+INSERT INTO oper_eal.Aluno (AlunoID, AlunoCPF, AlunoNome, AlunoEmail, AlunoCelular, DataNascimento, Logradouro, Bairro, Municipio, Estado, AlunoSenha) VALUES
 (101, '11122233301', 'Sofia Martins', 'sofia.martins@example.com', '21988776655', '2005-04-15', 'Rua das Laranjeiras', 'Laranjeiras', 'Rio de Janeiro', 'RJ', 'hashed_pass'),
 (102, '22233344402', 'Lucas Pereira', 'lucas.pereira@example.com', '21999887766', '2004-08-22', 'Avenida Atlântica', 'Copacabana', 'Rio de Janeiro', 'RJ', 'hashed_pass'),
 (103, '33344455503', 'Isabella Ferreira', 'isabella.f@example.com', '21987654321', '2006-01-10', 'Rua Barata Ribeiro', 'Copacabana', 'Rio de Janeiro', 'RJ', 'hashed_pass'),
@@ -93,7 +93,7 @@ INSERT INTO EAL.Aluno (AlunoID, AlunoCPF, AlunoNome, AlunoEmail, AlunoCelular, D
 (150, '45456767850', 'Enrico Neves', 'enrico.neves@example.com', '21980121122', '2002-12-03', 'Rua Iguape', 'Cascadura', 'Rio de Janeiro', 'RJ', 'hashed_pass');
 
 -- DADOS TRANSACIONAIS E RELACIONAIS
-INSERT INTO EAL.AlunoPaga (AlunoID, ServicoID, Quantidade, TransacaoData) VALUES
+INSERT INTO oper_eal.AlunoPaga (AlunoID, ServicoID, Quantidade, TransacaoData) VALUES
 (101, 1, 1, '2025-08-20'),
 (102, 2, 1, '2025-08-21'),
 (105, 5, 1, '2025-08-22'),
@@ -104,7 +104,7 @@ INSERT INTO EAL.AlunoPaga (AlunoID, ServicoID, Quantidade, TransacaoData) VALUES
 (151, 1, 1, '2025-08-27'),
 (152, 5, 1, '2025-08-28');
 
-INSERT INTO EAL.Aula (AulaID, AulaData, FuncID) VALUES
+INSERT INTO oper_eal.Aula (AulaID, AulaData, FuncID) VALUES
 (5001, '2025-09-01', 5),
 (5002, '2025-09-01', 7),
 (5003, '2025-09-02', 6),
@@ -116,21 +116,21 @@ INSERT INTO EAL.Aula (AulaID, AulaData, FuncID) VALUES
 (5009, '2025-09-05', 5),
 (5010, '2025-09-05', 7);
 
-INSERT INTO EAL.AulaTeorica (AulaID, TemaID) VALUES
+INSERT INTO oper_eal.AulaTeorica (AulaID, TemaID) VALUES
 (5001, 1),
 (5003, 2),
 (5005, 3),
 (5007, 4),
 (5009, 5);
 
-INSERT INTO EAL.AulaPratica (AulaID, AlunoID) VALUES
+INSERT INTO oper_eal.AulaPratica (AulaID, AlunoID) VALUES
 (5002, 101),
 (5004, 102),
 (5006, 132),
 (5008, 147),
 (5010, 151);
 
-INSERT INTO EAL.AulaTAluno (AulaID, AlunoID, PresencaAluno) VALUES
+INSERT INTO oper_eal.AulaTAluno (AulaID, AlunoID, PresencaAluno) VALUES
 (5001, 101, 1),
 (5001, 104, 1),
 (5001, 108, 1),
@@ -150,34 +150,34 @@ INSERT INTO EAL.AulaTAluno (AulaID, AlunoID, PresencaAluno) VALUES
 (5009, 151, 1),
 (5009, 152, 1);
 
-INSERT INTO EAL.AulaTSala (AulaID, IDSala, DtHrInicio, DtHrFim) VALUES
+INSERT INTO oper_eal.AulaTSala (AulaID, IDSala, DtHrInicio, DtHrFim) VALUES
 (5001, 1, '2025-09-01', '2025-09-01'),
 (5003, 2, '2025-09-02', '2025-09-02'),
 (5005, 3, '2025-09-03', '2025-09-03'),
 (5007, 1, '2025-09-04', '2025-09-04'),
 (5009, 2, '2025-09-05', '2025-09-05');
 
-INSERT INTO EAL.VeiculoAula (AulaID, IDVeiculo, DtHrInicio, DtHrFim) VALUES
-(5002, 1, '2025-09-01', '2025-09-01'),
-(5004, 3, '2025-09-02', '2025-09-02'),
-(5006, 2, '2025-09-03', '2025-09-03'),
-(5008, 3, '2025-09-04', '2025-09-04'),
-(5010, 1, '2025-09-05', '2025-09-05');
+INSERT INTO oper_eal.VeiculoAula (AulaID, IDVeiculo, DtHrInicio, DtHrFim) VALUES
+(5002, 1, '2025-09-01 09:00:00', '2025-09-01 10:00:00'),
+(5004, 3, '2025-09-02 11:00:00', '2025-09-02 12:00:00'),
+(5006, 2, '2025-09-03 14:00:00', '2025-09-03 14:00:00'),
+(5008, 3, '2025-09-04 15:00:00', '2025-09-04 15:00:00'),
+(5010, 1, '2025-09-05 16:00:00', NULL);
 
 
-INSERT INTO EAL.Exame (ExameID, Status, DtHrIni, DtHrFim, AlunoID, FuncID) VALUES
+INSERT INTO oper_eal.Exame (ExameID, Status, DtHrInicio, DtHrFim, AlunoID, FuncID) VALUES
 (201, 'Aprovado', '2025-09-15 10:00:00', '2025-09-15 11:00:00', 101, 7),
 (202, 'Reprovado', '2025-09-16 14:00:00', '2025-09-16 15:00:00', 102, 8),
 (203, 'Agendado', '2025-09-22 09:00:00', '2025-09-22 10:00:00', 103, 7),
 (204, 'Aprovado', '2025-09-18 19:00:00', '2025-09-18 21:00:00', 104, 2);
 
 
-INSERT INTO EAL.ExamePratico (ExameID, IDVeiculo) VALUES
+INSERT INTO oper_eal.ExamePratico (ExameID, IDVeiculo) VALUES
 (201, 1),
 (202, 2),
 (203, 1);
 
-INSERT INTO EAL.Pagamento (PagtoID, PagtoValor, PagtoData, FuncID) VALUES
+INSERT INTO oper_eal.Pagamento (PagtoID, PagtoValor, PagtoData, FuncID) VALUES
 (501, 160.00, '2025-08-30', 9),
 (502, 450.00, '2025-08-31', 3),
 (503, 750.00, '2025-09-01', 9),

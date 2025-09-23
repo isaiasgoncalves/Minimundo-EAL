@@ -1,6 +1,7 @@
-CREATE SCHEMA EAL;
+drop SCHEMA if exists oper_eal cascade;
+CREATE SCHEMA oper_eal;
 
-SET SEARCH_PATH TO EAL;
+SET SEARCH_PATH TO oper_eal;
 
 CREATE TABLE Aluno
 (
@@ -108,7 +109,7 @@ CREATE TABLE Exame
 (
   Status VARCHAR,
   ExameID INT NOT NULL,
-  DtHrIni DATE NOT NULL,
+  DtHrInicio DATE NOT NULL,
   DtHrFim DATE NOT NULL,
   AlunoID INT NOT NULL,
   FuncID INT NOT NULL,
@@ -148,8 +149,8 @@ CREATE TABLE AulaTSala
 
 CREATE TABLE VeiculoAula
 (
-  DtHrInicio DATE NOT NULL,
-  DtHrFim DATE NOT NULL,
+  DtHrInicio TIMESTAMP NOT NULL,
+  DtHrFim TIMESTAMP,
   AulaID INT NOT NULL,
   IDVeiculo INT NOT NULL,
   PRIMARY KEY (AulaID, IDVeiculo),

@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS dw_eal.DimAluno (
     AlunoNome VARCHAR,
     AlunoEmail VARCHAR,
     AlunoCelular VARCHAR,
-    DataNascimento DATE,
+    DataNascimento DATE
 );
 
 INSERT INTO dw_eal.DimAluno (
@@ -24,7 +24,7 @@ INSERT INTO dw_eal.DimAluno (
     AlunoNome,
     AlunoEmail,
     AlunoCelular,
-    DataNascimento,
+    DataNascimento
 )
 SELECT 
     gen_random_uuid() AS SKAluno,
@@ -32,7 +32,7 @@ SELECT
     a.AlunoNome,
     a.AlunoEmail,
     a.AlunoCelular,
-    a.DataNascimento,
+    a.DataNascimento
 FROM oper_eal.Aluno a;
 
 -- Dimensão Instrutor
@@ -176,7 +176,7 @@ INSERT INTO dw_eal.DimEndereco (
 )
 SELECT 
     gen_random_uuid() AS SKEndereco,
-    a.AlunoID
+    a.AlunoID,
     a.Bairro,
     a.Municipio,
     a.Estado,
@@ -199,27 +199,28 @@ INSERT INTO dw_eal.DimServico (
 )
 SELECT
     gen_random_uuid() AS SKServico,
-    s.ServicoID
+    s.ServicoID,
     s.ServicoTipo,
     s.ServicoValor
 FROM oper_eal.ServicoAutoEsc s;
 
 -- Fato Aula Prática
 CREATE TABLE IF NOT EXISTS dw_eal.FactAulaPratica (
-    SKAulaPratica UUID PRIMARY KEY,
     SKAluno UUID,
+    SKEndereco UUID,
     SKInstrutor UUID,
     SKVeiculo UUID,
     SKCalendario UUID,
     DtHrInicio TIMESTAMP,
     DtHrFim TIMESTAMP,
     StatusAula VARCHAR,
-    DuracaoAula FLOAT
+    DuracaoAula FLOAT,
+    PRIMARY KEY (SKAluno, SKEndereco, SKInstrutor, SKVeiculo, SKCalendario)
 );
 
 INSERT INTO dw_eal.FactAulaPratica (
-    SKAulaPratica,
     SKAluno,
+    SKEndereco,
     SKInstrutor,
     SKVeiculo,
     SKCalendario,
@@ -229,8 +230,8 @@ INSERT INTO dw_eal.FactAulaPratica (
     DuracaoAula
 )
 SELECT
-    gen_random_uuid() AS SKAulaPratica,
     da.SKAluno,
+    de.SKEndereco,
     di.SKInstrutor,
     dv.SKVeiculo,
     dc.SKCalendario,
@@ -250,26 +251,24 @@ FROM oper_eal.VeiculoAula va
 JOIN oper_eal.AulaPratica ap ON va.AulaID = ap.AulaID
 JOIN oper_eal.Aula a ON ap.AulaID = a.AulaID
 JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
+JOIN dw_eal.DimEndereco de ON ap.AlunoID = de.AlunoID
 JOIN dw_eal.DimInstrutor di ON a.FuncID = di.InstrutorID
 JOIN dw_eal.DimVeiculo dv ON va.IDVeiculo = dv.VeiculoID
 JOIN dw_eal.DimCalendario dc ON a.AulaData = dc.CalendarioData;
 
 -- Fato Exame Prático
-
 CREATE TABLE IF NOT EXISTS dw_eal.FactExamePratico (
-    SKExamePratico UUID PRIMARY KEY,
     SKAluno UUID NOT NULL,
     SKInstrutor UUID,  
     SKVeiculo UUID,
     SKCalendario UUID,
     DtHrInicio TIMESTAMP,
     DtHrFim TIMESTAMP,
-    StatusExame VARCHAR NOT NULL
-
+    StatusExame VARCHAR NOT NULL,
+    PRIMARY KEY (SKAluno, SKInstrutor, SKVeiculo, SKCalendario)
 );
 
 INSERT INTO dw_eal.FactExamePratico(
-    SKExamePratico,
     SKAluno,
     SKInstrutor, 
     SKVeiculo,
@@ -279,7 +278,6 @@ INSERT INTO dw_eal.FactExamePratico(
     StatusExame
 )
 SELECT 
-    gen_random_uuid() AS SKExamePratico,
     da.SKAluno,
     di.SKInstrutor,
     dv.SKVeiculo,
@@ -288,35 +286,33 @@ SELECT
     ex.DtHrFim,
     CASE 
         WHEN ex.DtHrFim IS NULL THEN 'Agendada'
-        WHEN ex.DtHrFim::timestamp = va.DtHrInicio::timestamp THEN 'Cancelada'
-        WHEN rand() < 0.8 THEN 'Reprovado'
+        WHEN ex.DtHrFim::timestamp = ex.DtHrInicio::timestamp THEN 'Cancelada'
+        WHEN random() < 0.8 THEN 'Reprovado'
         ELSE 'Aprovado'
     END AS StatusExame
-
 FROM oper_eal.ExamePratico ep
 JOIN oper_eal.Exame ex on ex.ExameID = ep.ExameID
 JOIN dw_eal.DimAluno da on ex.AlunoID = da.AlunoID
 JOIN dw_eal.DimInstrutor di on ex.FuncID = di.InstrutorID
-JOIN dw_eal.DimVeiculo dv on ep.VeiculoID = dv.VeiculoID
-JOIN dw_eal.DimCalendario dc ON ex.DtHrIni::DATE = dc.CalendarioData;
+JOIN dw_eal.DimVeiculo dv on ep.IDVeiculo = dv.VeiculoID
+JOIN dw_eal.DimCalendario dc ON ex.DtHrInicio::DATE = dc.CalendarioData;
 
 -- Fato Receita
-
 CREATE TABLE IF NOT EXISTS dw_eal.FactReceita (
-    -- Colocar ID de transação
     SKAluno UUID,
     SKEndereco UUID,
     SKServico UUID,
     SKCalendario UUID,
     Quantidade INT,
-    ValorPago FLOAT
+    ValorPago FLOAT,
+    PRIMARY KEY (SKAluno, SKEndereco, SKServico, SKCalendario)
 );
 
 INSERT INTO dw_eal.FactReceita(
-    SKAluno UUID,
-    SKEndereco UUID,
-    SKServico UUID,
-    SKCalendario UUID,
+    SKAluno,
+    SKEndereco,
+    SKServico,
+    SKCalendario,
     Quantidade,
     ValorPago
 )
@@ -326,8 +322,7 @@ SELECT
     ds.SKServico,
     dc.SKCalendario,
     ap.Quantidade,
-    (ap.Quantidade * ds.ServicoValor) ValorPago,
-
+    (ap.Quantidade * ds.ServicoValor) AS ValorPago
 FROM oper_eal.AlunoPaga ap
 JOIN dw_eal.DimAluno da ON ap.AlunoID = da.AlunoID
 JOIN dw_eal.DimServico ds ON ap.ServicoID = ds.ServicoID
