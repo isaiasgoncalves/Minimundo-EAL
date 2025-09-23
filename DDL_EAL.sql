@@ -156,11 +156,7 @@ CREATE TABLE AulaTSala
 CREATE TABLE VeiculoAula
 (
   DtHrInicio TIMESTAMP NOT NULL,
-<<<<<<< Updated upstream
-  DtHrFim TIMESTAMP,
-=======
   DtHrFim TIMESTAMP NOT NULL,
->>>>>>> Stashed changes
   AulaID INT NOT NULL,
   IDVeiculo INT NOT NULL,
   PRIMARY KEY (AulaID, IDVeiculo),

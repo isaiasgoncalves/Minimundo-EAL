@@ -29,12 +29,7 @@ INSERT INTO dw_eal.DimAluno (
     AlunoEmail,
     AlunoCelular,
     DataNascimento
-<<<<<<< Updated upstream
 )
-=======
-);
-
->>>>>>> Stashed changes
 SELECT 
     gen_random_uuid() AS SKAluno,
     a.AlunoID,
