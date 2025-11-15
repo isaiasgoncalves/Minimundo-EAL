@@ -1,0 +1,223 @@
+[
+  {
+    "id": 1,
+    "tipo_acidente": "Colisão traseira",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Mecânica Básica",
+      "Relacionamento Interpessoal no Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 2,
+    "tipo_acidente": "Tombamento",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 3,
+    "tipo_acidente": "Colisão lateral sentido oposto",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 4,
+    "tipo_acidente": "Saída de leito carroçável",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 5,
+    "tipo_acidente": "Colisão transversal",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 6,
+    "tipo_acidente": "Capotamento",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 7,
+    "tipo_acidente": "Queda de ocupante de veículo",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Normas de Circulação e Conduta"
+    ]
+  },
+  {
+    "id": 8,
+    "tipo_acidente": "Colisão com objeto",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 9,
+    "tipo_acidente": "Incêndio",
+    "aulas": [
+      "Primeiros Socorros",
+      "Mecânica Básica",
+      "Legislação Específica (Cargas Perigosas)",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 10,
+    "tipo_acidente": "Atropelamento de Pedestre",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Relacionamento Interpessoal no Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 11,
+    "tipo_acidente": "Colisão lateral mesmo sentido",
+    "aulas": [
+      "Direção Defensiva",
+      "Relacionamento Interpessoal no Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 12,
+    "tipo_acidente": "Colisão frontal",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Mecânica Básica",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 13,
+    "tipo_acidente": "Derramamento de carga",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Meio Ambiente e Cidadania",
+      "Mecânica Básica",
+      "Legislação Específica (Cargas Perigosas)",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 14,
+    "tipo_acidente": "Engavetamento",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Relacionamento Interpessoal no Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 15,
+    "tipo_acidente": "Atropelamento de Animal",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Meio Ambiente e Cidadania",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 16,
+    "tipo_acidente": "Eventos atípicos",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 17,
+    "tipo_acidente": "Sinistro pessoal de trânsito",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Relacionamento Interpessoal no Trânsito",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  }
+]

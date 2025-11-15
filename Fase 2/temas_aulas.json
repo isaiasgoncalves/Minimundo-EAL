@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "tema_aula": "Legislação de Trânsito",
+    "qnt_aulas": 18
+  },
+  {
+    "id": 2,
+    "tema_aula": "Direção Defensiva",
+    "qnt_aulas": 16
+  },
+  {
+    "id": 3,
+    "tema_aula": "Primeiros Socorros",
+    "qnt_aulas": 4
+  },
+  {
+    "id": 4,
+    "tema_aula": "Meio Ambiente e Cidadania",
+    "qnt_aulas": 4
+  },
+  {
+    "id": 5,
+    "tema_aula": "Mecânica Básica",
+    "qnt_aulas": 3
+  },
+  {
+    "id": 6,
+    "tema_aula": "Legislação Específica (Cargas Perigosas)",
+    "qnt_aulas": 5
+  },
+  {
+    "id": 7,
+    "tema_aula": "Condução Econômica e Defensiva (Pesados)",
+    "qnt_aulas": 4
+  },
+  {
+    "id": 8,
+    "tema_aula": "Relacionamento Interpessoal no Trânsito",
+    "qnt_aulas": 2
+  },
+  {
+    "id": 9,
+    "tema_aula": "Sinalização Viária (Placas e Marcas)",
+    "qnt_aulas": 5
+  },
+  {
+    "id": 10,
+    "tema_aula": "Normas de Circulação e Conduta",
+    "qnt_aulas": 6
+  },
+  {
+    "id": 11,
+    "tema_aula": "Infrações, Penalidades e Crimes de Trânsito",
+    "qnt_aulas": 5
+  },
+  {
+    "id": 12,
+    "tema_aula": "Processo de Habilitação e Documentação",
+    "qnt_aulas": 2
+  },
+  {
+    "id": 13,
+    "tema_aula": "Psicologia no Trânsito e Tomada de Decisão",
+    "qnt_aulas": 3
+  },
+  {
+    "id": 14,
+    "tema_aula": "Manutenção Preventiva do Veículo",
+    "qnt_aulas": 3
+  },
+  {
+    "id": 15,
+    "tema_aula": "Condução em Condições Adversas (Chuva, Neblina)",
+    "qnt_aulas": 4
+  }
+]

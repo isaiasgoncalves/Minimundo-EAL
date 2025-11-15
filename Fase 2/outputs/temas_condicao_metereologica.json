@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "condicao_metereologica": "Céu Claro",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 2,
+    "condicao_metereologica": "Nublado",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 3,
+    "condicao_metereologica": "Garoa/Chuvisco",
+    "aulas": [
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 4,
+    "condicao_metereologica": "Chuva",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 5,
+    "condicao_metereologica": "Sol",
+    "aulas": [
+      "Direção Defensiva",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 6,
+    "condicao_metereologica": "Ignorado",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Meio Ambiente e Cidadania",
+      "Mecânica Básica",
+      "Legislação Específica (Cargas Perigosas)",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Relacionamento Interpessoal no Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Processo de Habilitação e Documentação",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 7,
+    "condicao_metereologica": "Vento",
+    "aulas": [
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 8,
+    "condicao_metereologica": "Nevoeiro/Neblina",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 9,
+    "condicao_metereologica": "Neve",
+    "aulas": [
+      "Direção Defensiva",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Normas de Circulação e Conduta"
+    ]
+  }
+]

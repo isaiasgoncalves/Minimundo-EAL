@@ -1,0 +1,784 @@
+[
+  {
+    "id": 1,
+    "causa_acidente": "Reação tardia ou ineficiente do condutor",
+    "aulas": [
+      "Direção Defensiva",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 2,
+    "causa_acidente": "Ausência de reação do condutor",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 3,
+    "causa_acidente": "Transitar na contramão",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 4,
+    "causa_acidente": "Ingestão de álcool pelo condutor",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 5,
+    "causa_acidente": "Velocidade Incompatível",
+    "aulas": [
+      "Direção Defensiva",
+      "Legislação de Trânsito",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)",
+      "Infrações, Penalidades e Crimes de Trânsito"
+    ]
+  },
+  {
+    "id": 6,
+    "causa_acidente": "Ingestão de substâncias psicoativas pelo condutor",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 7,
+    "causa_acidente": "Suicídio (presumido)",
+    "aulas": [
+      "Primeiros Socorros",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 8,
+    "causa_acidente": "Demais falhas mecânicas ou elétricas",
+    "aulas": [
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 9,
+    "causa_acidente": "Entrada inopinada do pedestre",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Legislação de Trânsito",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 10,
+    "causa_acidente": "Retorno proibido",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 11,
+    "causa_acidente": "Sinalização mal posicionada",
+    "aulas": [
+      "Sinalização Viária (Placas e Marcas)",
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 12,
+    "causa_acidente": "Manobra de mudança de faixa",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Relacionamento Interpessoal no Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 13,
+    "causa_acidente": "Condutor deixou de manter distância do veículo da frente",
+    "aulas": [
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução Econômica e Defensiva (Pesados)"
+    ]
+  },
+  {
+    "id": 14,
+    "causa_acidente": "Condutor Dormindo",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 15,
+    "causa_acidente": "Desrespeitar a preferência no cruzamento",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 16,
+    "causa_acidente": "Pista Escorregadia",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 17,
+    "causa_acidente": "Demais Fenômenos da natureza",
+    "aulas": [
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 18,
+    "causa_acidente": "Restrição de visibilidade em curvas verticais",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 19,
+    "causa_acidente": "Acessar a via sem observar a presença dos outros veículos",
+    "aulas": [
+      "Direção Defensiva",
+      "Relacionamento Interpessoal no Trânsito",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 20,
+    "causa_acidente": "Ultrapassagem Indevida",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 21,
+    "causa_acidente": "Avarias e/ou desgaste excessivo no pneu",
+    "aulas": [
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo",
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 22,
+    "causa_acidente": "Acumulo de água sobre o pavimento",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução em Condições Adversas (Chuva, Neblina)",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 23,
+    "causa_acidente": "Acostamento em desnível",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 24,
+    "causa_acidente": "Condutor desrespeitou a iluminação vermelha do semáforo",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 25,
+    "causa_acidente": "Falta de elemento de contenção que evite a saída do leito carroçável",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Normas de Circulação e Conduta",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 26,
+    "causa_acidente": "Pista esburacada",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 27,
+    "causa_acidente": "Conversão proibida",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 28,
+    "causa_acidente": "Acesso irregular",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Sinalização Viária (Placas e Marcas)",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 29,
+    "causa_acidente": "Objeto estático sobre o leito carroçável",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 30,
+    "causa_acidente": "Pedestre - Ingestão de álcool/ substâncias psicoativas",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Relacionamento Interpessoal no Trânsito",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 31,
+    "causa_acidente": "Pedestre andava na pista",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Legislação de Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 32,
+    "causa_acidente": "Trafegar com motocicleta (ou similar) entre as faixas",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 33,
+    "causa_acidente": "Chuva",
+    "aulas": [
+      "Direção Defensiva",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 34,
+    "causa_acidente": "Iluminação deficiente",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução em Condições Adversas (Chuva, Neblina)",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 35,
+    "causa_acidente": "Ausência de sinalização",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 36,
+    "causa_acidente": "Afundamento ou ondulação no pavimento",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 37,
+    "causa_acidente": "Transitar no Acostamento",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 38,
+    "causa_acidente": "Mal súbito do condutor",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 39,
+    "causa_acidente": "Animais na Pista",
+    "aulas": [
+      "Direção Defensiva",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 40,
+    "causa_acidente": "Deficiência do Sistema de Iluminação/Sinalização",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 41,
+    "causa_acidente": "Curva acentuada",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 42,
+    "causa_acidente": "Pedestre cruzava a pista fora da faixa",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 43,
+    "causa_acidente": "Estacionar ou parar em local proibido",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito"
+    ]
+  },
+  {
+    "id": 44,
+    "causa_acidente": "Frear bruscamente",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 45,
+    "causa_acidente": "Condutor usando celular",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 46,
+    "causa_acidente": "Acumulo de óleo sobre o pavimento",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 47,
+    "causa_acidente": "Demais falhas na via",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 48,
+    "causa_acidente": "Declive acentuado",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 49,
+    "causa_acidente": "Carga excessiva e/ou mal acondicionada",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Legislação Específica (Cargas Perigosas)",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 50,
+    "causa_acidente": "Problema na suspensão",
+    "aulas": [
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo",
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 51,
+    "causa_acidente": "Área urbana sem a presença de local apropriado para a travessia de pedestres",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 52,
+    "causa_acidente": "Problema com o freio",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 53,
+    "causa_acidente": "Falta de acostamento",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 54,
+    "causa_acidente": "Restrição de visibilidade em curvas horizontais",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 55,
+    "causa_acidente": "Deixar de acionar o farol da motocicleta (ou similar)",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 56,
+    "causa_acidente": "Acumulo de areia ou detritos sobre o pavimento",
+    "aulas": [
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução em Condições Adversas (Chuva, Neblina)",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 57,
+    "causa_acidente": "Neblina",
+    "aulas": [
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 58,
+    "causa_acidente": "Sistema de drenagem ineficiente",
+    "aulas": [
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 59,
+    "causa_acidente": "Transtornos Mentais (exceto suicidio)",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Relacionamento Interpessoal no Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 60,
+    "causa_acidente": "Faróis desregulados",
+    "aulas": [
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo",
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 61,
+    "causa_acidente": "Faixas de trânsito com largura insuficiente",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 62,
+    "causa_acidente": "Desvio temporário",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 63,
+    "causa_acidente": "Redutor de velocidade em desacordo",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 64,
+    "causa_acidente": "Participar de racha",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Relacionamento Interpessoal no Trânsito",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 65,
+    "causa_acidente": "Semáforo com defeito",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 66,
+    "causa_acidente": "Modificação proibida",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo"
+    ]
+  },
+  {
+    "id": 67,
+    "causa_acidente": "Transitar na calçada",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 68,
+    "causa_acidente": "Fumaça",
+    "aulas": [
+      "Mecânica Básica",
+      "Manutenção Preventiva do Veículo",
+      "Direção Defensiva",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 69,
+    "causa_acidente": "Condutor não acionou o farol baixo durante o dia em rodovias de pista simples",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 70,
+    "causa_acidente": "Sinalização encoberta",
+    "aulas": [
+      "Direção Defensiva",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "classificacao_acidente": "Com Vítimas Feridas",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Infrações, Penalidades e Crimes de Trânsito"
+    ]
+  },
+  {
+    "id": 2,
+    "classificacao_acidente": "Sem Vítimas",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Mecânica Básica",
+      "Condução Econômica e Defensiva (Pesados)",
+      "Relacionamento Interpessoal no Trânsito",
+      "Sinalização Viária (Placas e Marcas)",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Manutenção Preventiva do Veículo",
+      "Condução em Condições Adversas (Chuva, Neblina)"
+    ]
+  },
+  {
+    "id": 3,
+    "classificacao_acidente": "Com Vítimas Fatais",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  }
+]

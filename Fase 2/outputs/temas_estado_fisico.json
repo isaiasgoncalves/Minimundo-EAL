@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "estado_fisico": "Lesões Leves",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  },
+  {
+    "id": 2,
+    "estado_fisico": "Ileso",
+    "aulas": [
+      "Direção Defensiva",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Relacionamento Interpessoal no Trânsito"
+    ]
+  },
+  {
+    "id": 3,
+    "estado_fisico": "Lesões Graves",
+    "aulas": [
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Legislação de Trânsito",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão",
+      "Normas de Circulação e Conduta"
+    ]
+  },
+  {
+    "id": 4,
+    "estado_fisico": "Óbito",
+    "aulas": [
+      "Legislação de Trânsito",
+      "Direção Defensiva",
+      "Primeiros Socorros",
+      "Normas de Circulação e Conduta",
+      "Infrações, Penalidades e Crimes de Trânsito",
+      "Psicologia no Trânsito e Tomada de Decisão"
+    ]
+  }
+]
