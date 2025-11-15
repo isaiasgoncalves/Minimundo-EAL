@@ -1,7 +1,7 @@
 import anthropic
 import pandas as pd
 import os
-import prompt as pt
+import prompts as pt
 
 
 user_prompt = pt.USER_PROMPT
