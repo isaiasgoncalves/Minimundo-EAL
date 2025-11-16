@@ -26,9 +26,8 @@ def get_score(caminho: str) -> list[tuple[str, float]]:
         dicionario_score_cat = (data_cleaned.groupby(col)['id'].count()/data_cleaned.shape[0]).to_dict()
         dicionario_score_cat =sorted(dicionario_score_cat.items(), key=lambda item:item[1], reverse=True)
         
-        dicionario_score_cat = [(f"{col}.{elem[0]}", elem[1]) for elem in dicionario_score_cat]
+        dicionario_score_cat = [(f"{elem[0]}", elem[1]) for elem in dicionario_score_cat]
         dicionario_score+=dicionario_score_cat
-    
 
     return dicionario_score
 
