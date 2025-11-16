@@ -175,7 +175,7 @@ CREATE TABLE AlunoPaga
   Quantidade INT NOT NULL,
   AlunoID INT NOT NULL,
   ServicoID INT NOT NULL,
-  PRIMARY KEY (AlunoID, ServicoID),
+  PRIMARY KEY (AlunoID, ServicoID, TransacaoData),
   FOREIGN KEY (AlunoID) REFERENCES Aluno(AlunoID),
   FOREIGN KEY (ServicoID) REFERENCES ServicoAutoEsc(ServicoID)
 );
