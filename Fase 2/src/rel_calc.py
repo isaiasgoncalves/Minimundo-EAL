@@ -24,8 +24,6 @@ def ler_todos_jsons(caminho_pasta):
             
     return resultados
 
-resultados = ler_todos_jsons("Fase 2/outputs")
-
 def encontrar_focos(dicionarios_temas):
     focos = {}
     for col in dicionarios_temas.keys():
@@ -39,8 +37,6 @@ def encontrar_focos(dicionarios_temas):
                     focos[tema] = [foco]
 
     return focos
-
-focos = encontrar_focos(resultados)
 
 def calcular_relevancia(focos):
     lista_score = get_score("Fase 2/data/acidentes2025_todas_causas_tipos.csv")
@@ -70,6 +66,9 @@ def calcular_relevancia(focos):
 
     return dicionario_relevancia
 
-dicionario_relevancia = calcular_relevancia(focos)
+def pipeline_relevancia():
+    resultados = ler_todos_jsons("Fase 2/outputs")
+    focos = encontrar_focos(resultados)
+    dicionario_relevancia = calcular_relevancia(focos)
 
-print(dicionario_relevancia)
+    return dicionario_relevancia
