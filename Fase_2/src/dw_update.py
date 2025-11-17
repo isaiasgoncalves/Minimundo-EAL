@@ -1,5 +1,5 @@
 import psycopg2
-from rel_calc import pipeline_relevancia
+from Fase_2.src.rel_calc import pipeline_relevancia
 
 def atualizar_colunas():
     """
@@ -61,5 +61,3 @@ def atualizar_colunas():
     cursor.close()
     conn.close()
 
-# TODO: MOVER PARA MAIN
-atualizar_colunas()

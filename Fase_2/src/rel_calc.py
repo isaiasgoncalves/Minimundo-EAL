@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from score import get_score
+from Fase_2.src.score import get_score
 
 def ler_todos_jsons(caminho_pasta: str) -> dict:
     """
@@ -69,7 +69,7 @@ def calcular_relevancia(focos: dict) -> dict:
         dict: Dicionario, que para cada tema, retorna a relevância e os 3 focos com mais ocorrências
     """
     # Calcula as ocorrências de cada foco
-    lista_score = get_score("Fase 2/data/acidentes2025_todas_causas_tipos.csv")
+    lista_score = get_score("Fase_2/data/acidentes2025_todas_causas_tipos.csv")
 
     # Converte para dicionario
     dicionario_score = {}
@@ -108,7 +108,7 @@ def pipeline_relevancia() -> dict:
     Returns:
         dict: Resultado da função calcular_relevancia
     """
-    resultados = ler_todos_jsons("Fase 2/outputs")
+    resultados = ler_todos_jsons("Fase_2/outputs")
     focos = encontrar_focos(resultados)
     dicionario_relevancia = calcular_relevancia(focos)
 
