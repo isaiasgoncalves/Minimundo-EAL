@@ -2,15 +2,20 @@ import psycopg2
 from rel_calc import pipeline_relevancia
 
 def atualizar_colunas():
+    """
+    Atualiza a coluna da dimensão tema no dw
+    """
+    # Calcula a relevancia
     dicionario_relevancia = pipeline_relevancia()
 
+    # Conecta no dw
     conn = psycopg2.connect(dbname="josethevez")
     conn.autocommit = True
     cursor = conn.cursor()
     cursor.execute("SET search_path TO dw_eal;")
 
+    # Prepara os comandos de alteração de tabela
     TABELA_NOME = 'DimTema'
-
     comandos_sql_add_colunas = [
         f"ALTER TABLE {TABELA_NOME} ADD COLUMN IF NOT EXISTS relevancia REAL;",
         f"ALTER TABLE {TABELA_NOME} ADD COLUMN IF NOT EXISTS foco_1 TEXT;",
@@ -18,6 +23,7 @@ def atualizar_colunas():
         f"ALTER TABLE {TABELA_NOME} ADD COLUMN IF NOT EXISTS foco_3 TEXT;"
     ]
 
+    # Executa os comandos de alteração de tabela
     for sql_command in comandos_sql_add_colunas:
         cursor.execute(sql_command)
 
@@ -46,11 +52,14 @@ def atualizar_colunas():
                 TemaNome = %(tema_chave)s;
         """
         
+        # Executa os comandos de update para cada tema
         cursor.execute(comando_update, valores)
 
+    # Commita e encerra a conexão
     conn.commit()
 
     cursor.close()
     conn.close()
 
+# TODO: MOVER PARA MAIN
 atualizar_colunas()
