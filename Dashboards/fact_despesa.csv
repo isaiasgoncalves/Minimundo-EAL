@@ -1,0 +1,21 @@
+FuncionarioID;FuncionarioNome;Cargo;CalendarioData;CalendarioMes;CalendarioNomeMes;CalendarioAno;ValorDespesa
+1;Carlos Eduardo Mendes;Gerente Administrativo;2025-09-30;9;September;2025;6000,0
+2;Estevão Lima;Sócio-Operacional;2025-09-30;9;September;2025;4500,0
+3;Amanda Lima;Sócia-Financeira;2025-09-30;9;September;2025;4500,0
+4;Lara Lima;Sócia-Marketing;2025-09-30;9;September;2025;4500,0
+5;Beatriz Costa;Instrutor Teórico;2025-09-30;9;September;2025;3200,0
+6;Ricardo Souza;Instrutor Teórico;2025-09-30;9;September;2025;3200,0
+7;Marcos Oliveira;Instrutor Prático;2025-09-30;9;September;2025;3800,0
+8;Juliana Santos;Instrutor Prático;2025-09-30;9;September;2025;3800,0
+9;Felipe Almeida;Atendente;2025-09-30;9;September;2025;2100,0
+10;Vanessa Dias;Profissional de TI;2025-09-30;9;September;2025;5000,0
+11;Roberto Carlos Braga;Instrutor Prático;2025-09-30;9;September;2025;3800,0
+12;Ana Paula Silva;Instrutor Prático;2025-09-30;9;September;2025;3800,0
+13;Bruno Martins;Instrutor Prático;2025-09-30;9;September;2025;4200,0
+14;Cláudia Abreu;Instrutor Teórico;2025-09-30;9;September;2025;3200,0
+15;Diego Fernandes;Atendente;2025-09-30;9;September;2025;2100,0
+16;Sandra Nunes;Atendente;2025-09-30;9;September;2025;2100,0
+17;Tiago Pereira;Instrutor Prático;2025-09-30;9;September;2025;4200,0
+18;Fernanda Costa;Instrutor Prático;2025-09-30;9;September;2025;3800,0
+19;Lucas Gabriel Alves;Instrutor Prático;2025-09-30;9;September;2025;3800,0
+20;Mariana Alves;Serviços Gerais;2025-09-30;9;September;2025;1800,0
